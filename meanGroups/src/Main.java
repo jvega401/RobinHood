@@ -70,9 +70,57 @@ Guaranteed constraints:
 An array of arrays, representing the groups of indices.
  */
 
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
+	public static int[][] meanGroups(int [][] a){
+		int [][] b = new int [a.length][];
+		for(int i = 0; i < a.length; i++){
+			int sum = 0;
+			for(int j = 0; j < a[i].length; j++){
+				sum += a[i][j];
+			}
+			//put means into array to later turn into something else to put in array
+
+
+		}
+		return b;
+	}
 
     public static void main(String[] args) {
-	// write your code here
+	    Scanner keyboard = new Scanner(System.in);
+	    char selection = 'c';
+	    do{
+			System.out.print("Enter the number of arrays: ");
+			int n = keyboard.nextInt();
+			Random rand = new Random();
+			int [][] a = new int[n][];
+			for(int i = 0; i < n; i++){
+				int temp = rand.nextInt(6);
+				if(temp == 0)
+					a[i] = new int[1];
+				else
+					a[i] = new int[temp];
+			}
+			for(int i = 0; i < n; i++){
+				for(int j = 0; j < a[i].length; j++){
+					int temp = rand.nextInt(6);
+					if(temp == 0)
+						a[i][j] = 1;
+					else
+						a[i][j] = temp;
+				}
+			}
+			for(int i = 0; i < n; i++){
+				for(int j = 0; j < a[i].length; j++){
+					System.out.print(a[i][j] + " ");
+				}
+				System.out.println();
+			}
+	    	System.out.print("Press 'c' to continue or any other key to quit: ");
+	    	keyboard.next().charAt(0);
+		}while(selection != 'c');
+	    System.out.println("Exiting...");
     }
 }
