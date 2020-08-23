@@ -36,5 +36,6 @@ public class Main {
             System.out.print("Press 'c' to run again or any key to quit: ");
             selection = keyboard.next().charAt(0);
         }while(selection == 'c');
+        System.out.println("Exiting....");
     }
 }
